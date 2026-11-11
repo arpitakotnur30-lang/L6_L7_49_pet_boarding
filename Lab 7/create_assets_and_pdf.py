@@ -190,7 +190,7 @@ class NumberedCanvas(canvas.Canvas):
         
         # Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 750, "LAB 7: Fuzzing for Input Validation Bugs | L6_L7_49_pet_boarding")
+            self.drawString(54, 750, "LAB 7: Fuzzing for Input Validation Bugs | ARPITA KOTNUR (PES1UG24AM051)")
             self.setStrokeColor(colors.HexColor("#dddddd"))
             self.setLineWidth(0.5)
             self.line(54, 742, letter[0] - 54, 742)
@@ -198,7 +198,7 @@ class NumberedCanvas(canvas.Canvas):
         # Footer (all pages)
         page_str = f"Page {self._pageNumber} of {page_count}"
         self.drawRightString(letter[0] - 54, 36, page_str)
-        self.drawString(54, 36, "PES University - Software Engineering Lab")
+        self.drawString(54, 36, "PES University | ARPITA KOTNUR (PES1UG24AM051) | L6_L7_49_pet_boarding")
         self.setStrokeColor(colors.HexColor("#dddddd"))
         self.setLineWidth(0.5)
         self.line(54, 48, letter[0] - 54, 48)
@@ -291,6 +291,8 @@ def generate_pdf():
     story.append(Paragraph("Automated Vulnerability Detection & Hardening with Hypothesis", subtitle_style))
 
     meta_data = [
+        [Paragraph("<b>Student Name:</b> ARPITA KOTNUR", body_style),
+         Paragraph("<b>SRN:</b> PES1UG24AM051", body_style)],
         [Paragraph("<b>Course:</b> Software Engineering Lab", body_style),
          Paragraph("<b>Repository:</b> L6_L7_49_pet_boarding", body_style)],
         [Paragraph("<b>Topic:</b> Property-Based Fuzz Testing", body_style),
