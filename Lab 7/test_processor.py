@@ -1,0 +1,26 @@
+"""
+Hypothesis fuzz tests for processor / pet_boarding functions.
+"""
+from hypothesis import given, strategies as st
+from processor import parse_booking, stay_average, payable_fee
+
+@given(st.text() | st.none())
+def test_parse_booking_no_crash(s):
+    try:
+        parse_booking(s)
+    except Exception as e:
+        assert False, f"parse_booking crashed with: {e}"
+
+@given(st.text() | st.none())
+def test_stay_average_no_crash(s):
+    try:
+        stay_average(s)
+    except Exception as e:
+        assert False, f"stay_average crashed with: {e}"
+
+@given(st.text() | st.none())
+def test_payable_fee_no_crash(s):
+    try:
+        payable_fee(s)
+    except Exception as e:
+        assert False, f"payable_fee crashed with: {e}"
